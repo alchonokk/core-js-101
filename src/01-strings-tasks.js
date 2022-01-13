@@ -185,7 +185,8 @@ function convertToUpperCase(str) {
  */
 function extractEmails(/* str */) {
   // const arr = str.split(';');
-  // const arr1 = arr.join(';', '\n');
+  // // const arr1 = arr.join(';', '\n');
+  // arr.forEach((n) => {return n});
   // return arr1();
   throw new Error('Not implemented');
 }
@@ -233,8 +234,13 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const input = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const output = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
+  const index = (x) => input.indexOf(x);
+  const translate = (x) => (index(x) > -1 ? output[index(x)] : x);
+  return str.split('').map(translate).join('');
+  // throw new Error('Not implemented');
 }
 
 /**
@@ -251,6 +257,15 @@ function encodeToRot13(/* str */) {
  *   isString(new String('test')) => true
  */
 function isString(/* value */) {
+  // if (typeof value === 'object'){
+  //    if (typeof  value [keys] === 'string'){
+  //     return true;
+  //    }
+  // }
+  // if (typeof value === 'string') {
+  //   return true;
+  // }
+  // return false;
   throw new Error('Not implemented');
 }
 
