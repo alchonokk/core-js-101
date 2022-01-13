@@ -33,8 +33,10 @@ function concatenateStrings(value1, value2) {
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(/* value */) {
-  throw new Error('Not implemented');
+function getStringLength(value) {
+  const arr = value.split('');
+  return arr.length;
+  // throw new Error('Not implemented');
 }
 
 /**
