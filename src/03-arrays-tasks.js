@@ -248,13 +248,22 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(/* arr */) {
-  // let prevSum = 0;
-  // return arr.map((value) => {
-  //   value += prevSum;
-  //   prevSum = value + prevSum;
-  // });
-  throw new Error('Not implemented');
+function getMovingSum(arr) {
+  const sums = arr.reduce((results, value, index) => {
+    const previousSum = index > 0 ? results[index - 1] : 0;
+    results.push(previousSum + value);
+    return results;
+  }, []);
+
+  return sums;
+  // let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+
+  // arr.reduce((tmp, elt, index) => {
+  //   console.log(tmp, elt);
+  //   return arr[index] = tmp + elt;
+  // }, 0);
+
+  // console.log(arr);
 }
 
 /**
