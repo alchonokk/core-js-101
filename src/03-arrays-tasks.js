@@ -296,8 +296,33 @@ function getSecondItems(arr) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
+function propagateItemsByPositionIndex(arr) {
+  // const copy = arr.concat();
+  // const doubles = arr.map((element, index) => {
+  //   // eslint-disable-next-line no-plusplus
+  //   for (let i = 0; i < index; i++) {
+  //     doubles.push(element);
+  //     // console.log(doubles);
+  //   }
+  //   // eslint-disable-next-line no-console
+  //   // console.log(doubles);
+  //   // return doubles;
+  // });
+  // return doubles;
+  // eslint-disable-next-line no-console
+  // console.log(arr);
+  if (arr.length === 0) {
+    return [];
+  }
+
+  const sums = arr.reduce((results, value, index) => {
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < index + 1; i++) {
+      results.push(value);
+    }
+    return results;
+  }, []);
+  return sums;
 }
 
 /**
